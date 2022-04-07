@@ -1,78 +1,64 @@
-## 适配了qqbot、quanx和loon
-# 说明
- * 发现脚本重复的可以提pr到.gitignore文件，欢迎多提PR。
- * 因为仓库本身是脚本自己同步，有的仓库名字不一样难免又很多重复的。
- * 有互助码没删干净的可以提醒我一下，感谢！
- * 个人研究学习自用，主要是为了自己方便
- * 合集加的最后结尾大佬们脚本,删了互助码和互助池，gua佬没删，需要互助池的可以用他们合集，结尾已经放了链接
- * 想用谁的合集都可以，结尾有其他大佬们的合集或者看Oreomeow大佬整理的那些
-### [TG群](https://t.me/jdd_fruit)
-### [TG频道](https://t.me/jddfruit)
-## 青龙拉取链接(sendNotify需要放到/ql/deps目录下)
+## 重要通知
+### 落日与孤鹜齐飞,秋水共长天一色。
+收集全网目前能正常使用的脚本。
+
+
+【集合仓库拉取命令】
 ``` 
-ql repo https://github.com/gys619/Absinthe.git "jd_|jx_|jddj_|gua_|getJDCookie|wskey" "activity|backUp" "^jd[^_]|USER|utils|ZooFaker_Necklace|JDJRValidator_|sign_graphics_validate|jddj_cookie|function|ql|magic|JDJR|JD|sendNotify" "main"
+ql repo https://ghproxy.com/https://github.com/Yun-City/City.git "jd_|jx_|gua_|jddj_|getJDCookie" "activity|backUp" "^jd[^_]|USER|function|utils|sendnotify|ZooFaker_Necklace|jd_Cookie|JDJRValidator_|sign_graphics_validate|ql|magic|cleancart_activity"
 ```
 
-## 带ccwav大佬通知版(不需要放/ql/deps目录下)
-``` 
-ql repo https://github.com/gys619/Absinthe.git "jd_|jx_|jddj_|gua_|getJDCookie|wskey|sendNotify" "activity|backUp" "^jd[^_]|USER|utils|ZooFaker_Necklace|JDJRValidator_|sign_graphics_validate|jddj_cookie|function|ql|magic|JDJR|JD" "main"
-```
-```
-推荐定时 0 */4 * * *
+【安装docker、安装2.9.3青龙、配置本仓库】
+
+```bash
+wget -q  https://raw.githubusercontents.com/buqian123/Tasks/main/ql.sh -O ql.sh && bash ql.sh
 ```
 
 
-[退会：JDMemberCloseAccount](https://github.com/yqchilde/JDMemberCloseAccount)
+【已安装青龙的用户一键配置代码 配置City仓库助力】
 
-修改deps内的sendNotify.js
-可以设置青龙config内EnableExtraShell="true"
-然后填写[task_after.sh](https://raw.githubusercontent.com/gys619/Absinthe/main/task_after.sh) (仓库内的仅供参考)
+```bash
+docker exec -it qqinglong bash -c "$(curl -fsSL  https://raw.githubusercontent.com/Yun-City/City/main/Shell/1customCDN.sh)"
+```
 
-免责声明: 本仓库项目中所涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，不保证其合法性，准确性，完整性和有效性，请根据情况自行判断。请勿将本项目的任何内容用于商业或非法途径，否则后果由使用者自负。如果您认为该项目的内容可能涉嫌侵犯其权利，请与我联系，我会尽快删除文件。如果您使用或复制了本仓库项目中的任何内容，则视为您已接受此免责声明。
 
-拉不到库，需要删了重新拉一下，运行一下下面命令就好了，库不稳，见谅！
 
-docker exec -it 容器名 bash
+【青龙依赖一键配置】
 
-cd repo
+```bash
+docker exec -it qinglong bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/Yun-City/City/main/Shell/QLOneKeyDependency.sh | sh)"
+```
 
-rm -rf gys619_Absinthe_main
+【量子一键配置】
 
-### 脚本说明
-<details>
-<summary>查看</summary>
+```bash
+bash <(curl -sL  http://jx.lim1.cn/onekey-install-liangzi.sh)
+```
 
-加了一件安装依赖脚本
+#### 说明
+
+
 
 * 想跑gua开卡的可以加,false改成true
     ```
-    export guaopencard_All="false"
-    export guaopencard_addSku_All="false"
-    export guaopencardRun_All="false"
-    export guaopencard_draw="false"
-    ```
-* 去掉多余的双十一红包脚本，自己再config里加export FLCODE=''，否则不能跑
-* 内部互助可以把code.sh和task_before.sh放config目录下，并添加一个code的定时任务，命令:task /ql/config/code.sh
-* 加KingRan大佬仓库
-* 最新面板2.9.7或者新版拉不到可以进入容器
-    ```
-    docker exec -it 容器名 bash
-    cd repo
-    rm -rf gys619_jdd
+	export guaopencard_All="true" # 青蛙开卡总开关
+    export guaopencard_addSku_All="false" # 青蛙开卡加购
+    export guaopencardRun_All="true" # 青蛙开卡做任务
+    export guaopencard_draw="true" # 青蛙开卡抽奖
+	export guaopencard_rewardBean="1,2,3" # 京豆奖励判断 | 1=邀请 2=开卡 3=关注  | 填1,2,3
     ```
 
-* 加了[Oreomeow大佬](https://raw.githubusercontent.com/Oreomeow/VIP/main/Conf/Qinglong/config.sample.sh)的config模板,名字是jd_config.sample.sh
-* 财富岛新手任务开木板
-  * 修改青龙配置文件,如下,加个ts
-  ```
-   #ql repo命令拉取脚本时需要拉取的文件后缀，直接写文件后缀名即可
-   RepoFileExtensions="js py ts"
-   ```
 
+ - 更新一个整库脚本
+ ```
+ ql repo <repourl> <path> <blacklist> <dependence> <branch>
+ ```
+
+ - 更新单个脚本文件
+ ```
+ ql raw <fileurl>
+ ```
  
- 
-</details>
-
 ### 安装青龙需要一些的依赖
 <details>
 <summary>查看依赖列表</summary>
@@ -119,200 +105,46 @@ rm -rf gys619_Absinthe_main
 
 </details>
 
+## Special statement:
+
+* Any unlocking and decryption analysis scripts involved in the Script project released by this warehouse are only used for testing, learning and research, and are forbidden to be used for commercial purposes. Their legality, accuracy, completeness and effectiveness cannot be guaranteed. Please make your own judgment based on the situation. .
+
+* All resource files in this project are forbidden to be reproduced or published in any form by any official account or self-media.
+
+* This warehouse is not responsible for any script problems, including but not limited to any loss or damage caused by any script errors.
+
+* Any user who indirectly uses the script, including but not limited to establishing a VPS or disseminating it when certain actions violate national/regional laws or related regulations, this warehouse is not responsible for any privacy leakage or other consequences caused by this.
+
+* Do not use any content of the Script project for commercial or illegal purposes, otherwise you will be responsible for the consequences.
+
+* If any unit or individual believes that the script of the project may be suspected of infringing on their rights, they should promptly notify and provide proof of identity and ownership. We will delete the relevant script after receiving the certification document.
+
+* Anyone who views this item in any way or directly or indirectly uses any script of the Script item should read this statement carefully. This warehouse reserves the right to change or supplement this disclaimer at any time. Once you have used and copied any relevant scripts or rules of the Script project, you are deemed to have accepted this disclaimer.
+
+ **You must completely delete the above content from your computer or mobile phone within 24 hours after downloading.**  </br>
+> ***You have used or copied any script made by yourself in this warehouse, it is deemed to have accepted this statement, please read it carefully*** 
 
 
-### 青龙拉取常用京东脚本库([Oreomeow大佬](https://github.com/Oreomeow/VIP/blob/main/Tasks/qlrepo/Readme.md)整理的一些仓库)
-<details>
-<summary>京东脚本库</summary>
- 
-
-#### 说明
- - 更新一个整库脚本
- ```
- ql repo <repourl> <path> <blacklist> <dependence> <branch>
- ```
- - 更新单个脚本文件
- ```
- ql raw <fileurl>
- ```
- 下面是示例
-
-#### 整库
-- `Unknown 备份托管等`
-  
-  1. `JDHelloWorld`
-  ```
-  ql repo https://github.com/JDHelloWorld/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp|Coupon|enen|update|test" "^jd[^_]|USER|^TS|utils|notify|env|package|ken.js"
-  ```
-  2. `he1pu`（自动提交助力码-京喜工厂、种豆得豆、东东工厂、东东农场、健康社区、京喜财富岛、东东萌宠、闪购盲盒，随机从数据库中选取助力码互助）
-  ```
-  ql repo https://github.com/he1pu/JDHelp.git "jd_|jx_|getJDCookie" "Coupon|update" "^jd[^_]|USER|^sign|^ZooFaker|utils"
-  ```
-  3. `shufflewzc`
-  ```
-  ql repo https://github.com/shufflewzc/faker2.git "jd_|jx_|gua_|jddj_|getJDCookie" "activity|backUp" "^jd[^_]|USER|utils|^JS|^TS|^JDJRValidator_Pure|^ZooFaker|^sign"
-  ```
-  4. `Aaron-lv`
-  ```
-  ql repo https://github.com/Aaron-lv/sync.git "jd_|jx_|getJDCookie" "activity|backUp|Coupon" "^jd[^_]|USER|utils" "jd_scripts"
-  ```
-  5. `panghu999`（无维护）
-  ```
-  ql repo https://github.com/panghu999/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp|Coupon|jd_try|format_" "^jd[^_]|USER"
-  ```
-  6. `chinnkarahoi`（无维护）
-  ```
-  ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp|Coupon" "^jd[^_]|USER"
-  ```
-
-- `passerby-b`
-```
-ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event|jddj_fruit_code.js|jddj_getck.js|jd_|jddj_cookie"
-```
-- `curtinlv`
-```
-ql repo https://github.com/curtinlv/JD-Script.git "jd_"
-```
-- `smiek2221`
-```
-ql repo https://github.com/smiek2221/scripts.git "jd_|gua_" "" "^MovementFaker|^JDJRValidator|^ZooFaker|^sign" 
-```
-- `cdle`
-```
-ql repo https://github.com/cdle/xdd.git "jd_" "disposable|expired|jdc"
-```
-- `ZCY01`
-```
-ql repo https://github.com/ZCY01/daily_scripts.git "jd_"
-```
-- `whyour/hundun`
-```
-ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
-```
-- `moposmall`
-```
-ql repo https://github.com/moposmall/Script.git "Me"
-```
-- `Ariszy (Zhiyi-N)`
-```
-ql repo https://github.com/Ariszy/Private-Script.git "JD"
-```
-- `photonmang`（宠汪汪及兑换、点点券修复）
-```
-ql repo https://github.com/photonmang/quantumultX.git "JDscripts"
-```
-- `jiulan`
-```
-ql repo https://github.com/jiulan/platypus.git "jd_|jx_" "" "overdue" "main"
-```
-- `star261`
-```
-ql repo https://github.com/star261/jd.git "jd_|star" "" "code" "main"
-```
-- `Wenmoux`
-```
-ql repo https://github.com/Wenmoux/scripts.git "other|jd" "" "" "wen"
-```
-- `Tsukasa007`
-```
-ql repo https://github.com/Tsukasa007/my_script.git "jd_|jx_" "jdCookie|USER_AGENTS|sendNotify|backup" "" "master"
-```
-
-#### 单脚本
-#### 名称之后标注`﹢`的单脚本，若上面已拉取仓库的可以不拉，否则会重复拉取。这里适用于只拉取部分脚本使用
-> `curtinlv`﹢
-
->> 入会
-```
-ql raw https://raw.githubusercontent.com/curtinlv/JD-Script/main/OpenCard/jd_OpenCard.py
-```
->> 关注
-```
-ql raw https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py
-```
-
-> `chiupam`
-
->> 京喜工厂瓜分电力开团 ID 
-```
-ql raw https://raw.githubusercontent.com/chiupam/JD_Diy/master/pys/activeId.py
-```
-
-> `Aaron-lv`+
-
->> 财富岛
-```
-ql raw https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfd.js
-```
-or
-```
-ql repo https://github.com/Aaron-lv/sync.git "jd_cfd" "" "" "jd_scripts"
-```
-
-> `Wenmoux`+
-
->> 口袋书店
-```
-ql raw https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/chinnkarahoi_jd_bookshop.js
-```
-or
-```
-ql repo https://github.com/Wenmoux/scripts.git "chinnkarahoi_jd_bookshop" "" "" "wen"
-```
-
-> `NobyDa`
-
->> 京东多合一签到脚本
-
-```
-ql raw https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
-```
-or
-```
-ql repo https://github.com/NobyDa/Script.git "JD-DailyBonus" "" "JD_DailyBonus" "master"
-```
-
-#### 已删库存档
-- `monk-coder`
-```
-ql repo https://github.com/monk-dust/dust.git "i-chenzhe|normal|member|car" "backup"
-```
-- `hyzaw`
-```
-ql repo https://github.com/hyzaw/scripts.git "ddo_"
-```
-- `zooPanda`
-```
-ql repo https://github.com/zooPanda/zoo.git "zoo"
-```
-- `longzhuzhu`
-```
-ql repo https://github.com/longzhuzhu/nianyu.git "qx"
-```
-- `panghu999/panghu`
-```
-ql repo https://github.com/panghu999/panghu.git "jd_"
-```
-</details>
- 
- 
-
- 
- 
- 
-
-### 致谢
+## Special thanks to: new scripts actor
+* [@NobyDa](https://github.com/NobyDa)
+* [@Andy Woo](https://t.me/update_help_group)
+* [@cdle](https://github.com/cdle/carry)
+* [@FKPYW](https://github.com/FKPYW/dongge)
+* [@Smiek2121](https://github.com/smiek2121/scripts)
+* [@star261](https://github.com/star261/jd) 
 * [@kangwenhang](https://github.com/kangwenhang)
-* [@smiek2221](https://github.com/smiek2221/scripts.git)
+* [@Oreo](https://github.com/Oreomeow)
 * [@yuannian1112](https://github.com/yuannian1112/jd_scripts.git)
-*  [@okyyds](https://github.com/okyyds/yyds/tree/master)
-*  [@shufflewzc](https://github.com/shufflewzc/faker2/tree/main)
-*  [@passerby-b](https://github.com/passerby-b/JDDJ.git)
-*  [@he1pu](https://github.com/he1pu/JDHelp.git)
-*  [@ccwav](https://github.com/ccwav/QLScript2.git)
-*  [@Zy143L](https://github.com/Zy143L/wskey.git)
-*  [@X1a0He](https://github.com/X1a0He/jd_scripts_fixed)
-*  [@KingRan](https://github.com/KingRan/KR)
-*  [@Aaron-lv](https://github.com/Aaron-lv/sync)
-*  [@zero205](https://github.com/zero205/JD_tencent_scf)
-*  [@okyyds_duck](https://github.com/okyyds/duck.git)
+* [@shufflewzc](https://github.com/shufflewzc/faker2.git)
+* [@passerby-b](https://github.com/passerby-b/JDDJ.git)
+* [@he1pu](https://github.com/he1pu/JDHelp.git)
+* [@airacg](https://github.com/airacg/jd_task.git)
+* [@ccwav](https://github.com/ccwav/QLScript2.git)
+* [@Zy143L](https://github.com/Zy143L/wskey.git)
+* [@X1a0He](https://github.com/X1a0He/jd_scripts_fixed)
+* [@AlterGu](https://github.com/AlterGu/qinglong_note)
+* [@KingRan](https://github.com/KingRan/JD-Scripts)
+* [@Aaron-lv](https://github.com/Aaron-lv/sync)
+* [@zzfiu](https://github.com/zzfiu/jd.git)
+* [@zero205](https://github.com/zero205/JD_tencent_scf)
+* [@wuye999](https://github.com/wuye999/myScripts)

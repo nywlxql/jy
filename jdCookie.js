@@ -1,6 +1,6 @@
 /*
 ================================================================================
-魔改自 https://github.com/555555/faker2/blob/main/jdCookie.js
+魔改自 https://github.com/shufflewzc/faker2/blob/main/jdCookie.js
 修改内容：与task_before.sh配合，由task_before.sh设置要设置要做互助的活动的 ShareCodeConfigName 和 ShareCodeEnvName 环境变量，
         然后在这里实际解析/ql/log/.ShareCode中该活动对应的配置信息（由code.sh生成和维护），注入到nodejs的环境变量中
 修改原因：原先的task_before.sh直接将互助信息注入到shell的env中，在ck超过45以上时，互助码环境变量过大会导致调用一些系统命令
@@ -98,7 +98,7 @@ function SetShareCodesEnv(nameChinese = "", nameConfig = "", envName = "") {
     process.env[envName] = shareCodesStr
 
     let totalCodeCount = rightIndex - leftIndex + 1
-    console.info(`${nameChinese}的 互助码环境变量 ${envName}，共计 ${totalCodeCount} 组互助码，总大小为 ${shareCodesStr.length} 字节`)
+    console.info(`City友情提示：${nameChinese}的 互助码环境变量 ${envName}，共计 ${totalCodeCount} 组互助码，总大小为 ${shareCodesStr.length} 字节`)
 }
 
 // 判断当前活动脚本是否在互助脚本列表中

@@ -1,5 +1,4 @@
 /*
-旁白
  [task_local]
 #快速推一推
 0 1 * * * jd_tyt.js, tag=推一推, img-url=
