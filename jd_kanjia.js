@@ -19,8 +19,6 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [], cookie = '', message;
 let actId = ''; //你要参加砍价的商品ID
 let packetId = '';//你要参加砍价的邀请码
-//c50d6379ad3b4782bfc05940e358ace3
-//ac4a4b0b300e4fc6a2fdb88412f51e94-amRfTFBtdnNBVGdyQ0t1
 if (process.env.actId) {
   actId = process.env.actId;
 }
@@ -104,7 +102,7 @@ headers: {
                     data = JSON.parse(data);
                  
                    
-                   if($.index === 1){
+                   
                     if(data.code == 0){
 console.log("商品："+data.data[0].goodsName+"\n商品ID："+data.data[0].actId)
 await listyqm(data.data[0].actId)
@@ -118,7 +116,6 @@ console.log("\n商品："+data.data[4].goodsName+"\n商品ID："+data.data[4].ac
 await listyqm(data.data[4].actId)
 
                 }
-			}
             } catch (e) {
                 $.logErr(e, resp);
             } finally {

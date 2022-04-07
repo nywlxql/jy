@@ -44,7 +44,7 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = ['', '', '', '', '', '', ''];
+const inviteCodes = [''];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
@@ -617,7 +617,7 @@ function jdfactory_getHomeData() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://111111/ddfactory`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://127.0.0.1`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
